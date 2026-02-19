@@ -56,6 +56,17 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="col-12">
+                                <label class="form-label">Appointment Mode</label>
+                                <div class="radio">
+                                    <input type="radio" class="btn-check" name="visit_type" id="mode1" value="In-Store Visit" onclick="toggleVideo(false)" required>
+                                    <label class="btn btn-outline-secondary" for="mode1">📍 In-Store Visit, (Chandni Chowk, Delhi)</label>
+
+                                    <input type="radio" class="btn-check" name="visit_type" id="mode2" value="Video Call" onclick="toggleVideo(true)">
+                                    <label class="btn btn-outline-secondary" for="mode2">📹 Video Call</label>
+                                </div>
+                            </div>
 
                             <div class="col-md-6">
                                 <label class="form-label">Preferred Date</label>
