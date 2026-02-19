@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Keshav Fashions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #fcf8f8; font-family: 'Segoe UI', Roboto, sans-serif; }
+        .booking-card { border: none; border-radius: 20px; box-shadow: 0 15px 35px rgba(179, 45, 46, 0.1); overflow: hidden; }
+        .brand-header { background: linear-gradient(135deg, #b32d2e 0%, #7a1f20 100%); color: white; padding: 2.5rem; text-align: center; }
+        .form-label { font-weight: 600; color: #444; }
+        .btn-submit { background-color: #b32d2e; border: none; padding: 14px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; }
+        .btn-submit:hover { background-color: #8a2223; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(138, 34, 35, 0.3); }
+        .checkbox-group { background: #fff; border: 1px solid #dee2e6; padding: 15px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-7">
+            <div class="card booking-card">
+                <div class="brand-header">
+                    <h2 class="h1 mb-1">Keshav Fashions</h2>
+                    <p class="mb-0 opacity-75 text-uppercase fw-lighter" style="letter-spacing: 2px;">Exquisite Bridal & Ethnic Wear</p>
+                </div>
+                
+                <div class="card-body p-4 p-md-5">
+                    <form action="https://formspree.io/f/mnjbbqnv" method="POST">
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter your name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Mobile Number</label>
+                                <input type="tel" name="phone" class="form-control form-control-lg" placeholder="98XXXXXXXX" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label d-block">What would you like to see? (Select all that apply)</label>
+                                <div class="checkbox-group">
+                                    <div class="form-check me-4">
+                                        <input class="form-check-input" type="checkbox" name="interest[]" value="Bridal Lehenga" id="bridal">
+                                        <label class="form-check-label" for="bridal">Bridal Lehenga (12000/- onwards)</label>
+                                    </div>
+                                    <div class="form-check me-4">
+                                        <input class="form-check-input" type="checkbox" name="interest[]" value="Party Wear Lehenga" id="party">
+                                        <label class="form-check-label" for="party">Party Wear Lehenga (10000/- onwards)</label>
+                                    </div>
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="checkbox" name="interest[]" value="Saree" id="saree">
+                                        <label class="form-check-label" for="saree">Saree (3000/- onwards)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Preferred Date</label>
+                                <input type="date" id="bookingDate" name="date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Time Slot</label>
+                                <select name="time_slot" class="form-select" required>
+                                    <option value="" selected disabled>Choose a time</option>
+                                    <option>11:00 AM - 12:30 PM</option>
+                                    <option>12:30 PM - 02:00 PM</option>
+                                    <option>03:00 PM - 04:30 PM</option>
+                                    <option>04:30 PM - 06:00 PM</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">How did you hear about us?</label>
+                                <div class="section-box d-flex flex-wrap gap-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="source" value="Google" id="google">
+                                        <label class="form-check-label" for="google">Google</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="source" value="Facebook" id="facebook">
+                                        <label class="form-check-label" for="facebook">Facebook</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="source" value="Instagram" id="instagram">
+                                        <label class="form-check-label" for="instagram">Instagram</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="source" value="AI" id="ai">
+                                        <label class="form-check-label" for="ai">Suggested by AI</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="source" value="Relative" id="relative">
+                                        <label class="form-check-label" for="relative">Relative/Friends/Others</label>
+                                    </div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-primary btn-submit w-100 shadow-sm">Confirm My Appointment</button>
+                                <p class="text-center text-muted small mt-3">One of our executive will contact you shortly to confirm your slot.</p>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Set minimum date to today
+    const dateInput = document.getElementById('bookingDate');
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.setAttribute('min', today);
+</script>
+
+</body>
+</html>
