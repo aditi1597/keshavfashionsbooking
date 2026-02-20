@@ -70,8 +70,10 @@
 
                             <div class="col-md-6">
                                 <label class="form-label">Preferred Date</label>
-                                <input type="date" id="bookingDate" name="date" class="form-control" required>
+                                <input type="date" id="bookingDate" name="date" class="form-control form-control-lg" required>
+                                <div id="sundayError" class="error-msg text-danger">⚠️ We are closed on Sundays.</div>
                             </div>
+                            
                             <div class="col-md-6">
                                 <label class="form-label">Time Slot</label>
                                 <select name="time_slot" class="form-select" required>
@@ -122,10 +124,24 @@
 </div>
 
 <script>
-    // Set minimum date to today
+
+    // Date Validation: Min Date + Sunday Check
     const dateInput = document.getElementById('bookingDate');
-    const today = new Date().toISOString().split("T")[0];
-    dateInput.setAttribute('min', today);
+    const sundayError = document.getElementById('sundayError');
+    
+    // Set minimum date to today
+    dateInput.min = new Date().toISOString().split("T")[0];
+
+    dateInput.addEventListener('input', function(e){
+        const day = new Date(this.value).getUTCDay();
+        // 0 is Sunday
+        if(day === 0){
+            this.value = '';
+            sundayError.style.display = 'block';
+        } else {
+            sundayError.style.display = 'none';
+        }
+    });
 </script>
 
 </body>
